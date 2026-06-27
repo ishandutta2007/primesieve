@@ -11,6 +11,10 @@ Changes in version 12.15, 27/06/2026
   The latter reset the CPU architecture baseline to armv8-a.
 * multiarch_sve_arm.cmake: Update the ARM SVE compiler support check
   to match.
+* CMakeLists.txt: Disable building the shared libprimesieve on
+  Emscripten (WebAssembly) so that the primesieve binary is linked
+  statically. Emscripten now builds shared libraries as side modules,
+  which broke static linking of the binary and the WebAssembly CI build.
 
 Changes in version 12.14, 08/05/2026
 ====================================
